@@ -11,12 +11,7 @@ export const fetchRepos = (
 ) => async (dispatch) => {
   try {
     const response = await axios.get(
-      `https://api.github.com/users/${query}/repos?page=${pageNum}&per_page=10`,
-      {
-        headers: {
-          Authorization: "token 7d4563a58ff9e2bb9887646df80a30c1c2ab0b6a",
-        },
-      }
+      `https://api.github.com/users/${query}/repos?page=${pageNum}&per_page=10`
     )
     dispatch({
       type: FETCH_REPOS,
